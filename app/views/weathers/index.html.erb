@@ -1,0 +1,16 @@
+<form action="/" method="get">
+
+  <h2>City: <%= @city %></h2>
+
+<h3>Temp: <%= @temp %></h3>
+
+<h2>5 day forecast</h2>
+
+<% @forecast.each do |forecast| %>
+  <%= forecast %>
+  <h4><%= forecast["day"] %> - <% forecast["date"] %></h4>
+  <ul><li>High: <%= forecast["high"] %></li>
+    <li>Low: <%= forecast["low"] %></li>
+    <li>Conditions: <%= forecast["text"]%></li>
+  </ul>
+  <% end %>
